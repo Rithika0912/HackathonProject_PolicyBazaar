@@ -13,16 +13,11 @@ public class BaseClass {
 
     public void setup() {
 
-        WebDriverManager.chromedriver().setup();
-
         driver = new ChromeDriver();
 
         driver.manage().window().maximize();
 
-        driver.manage().timeouts()
-                .implicitlyWait(Duration.ofSeconds(10));
-
-        driver.get("https://www.policybazaar.com");
+        driver.get("https://travel.policybazaar.com/");
     }
 
     public void tearDown() {

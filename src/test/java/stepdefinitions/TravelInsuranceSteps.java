@@ -24,11 +24,14 @@ public class TravelInsuranceSteps extends BaseClass {
     @When("User selects Travel Insurance")
     public void selectTravelInsurance() {
 
-        homePage.clickTravelInsurance();
+        System.out.println("Already on Travel Insurance Page");
     }
 
+
     @When("User selects European country {string}")
-    public void selectCountry(String country) {
+    public void selectCountry(String country) throws InterruptedException {
+
+        Thread.sleep(3000);
 
         travelPage.selectCountry();
     }

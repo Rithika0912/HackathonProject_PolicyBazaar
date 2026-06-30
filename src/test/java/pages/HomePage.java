@@ -8,17 +8,14 @@ public class HomePage {
     WebDriver driver;
 
     public HomePage(WebDriver driver) {
-
-        this.driver=driver;
+        this.driver = driver;
     }
 
     By travelInsurance =
-            By.xpath("//div[2]/section/div[7]");
+            By.xpath("//a[contains(@href,'travel-insurance')]");
 
     public void clickTravelInsurance() {
 
         driver.findElement(travelInsurance).click();
     }
-
-    
 }

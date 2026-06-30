@@ -3,6 +3,10 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
 
 import java.util.List;
 
@@ -28,9 +32,20 @@ public class TravelInsurancePage {
     // Select Country
     public void selectCountry() {
 
-        driver.findElement(country).click();
+        WebDriverWait wait =
+                new WebDriverWait(driver, Duration.ofSeconds(20));
 
-        driver.findElement(unitedKingdom).click();
+        WebElement country =
+                wait.until(ExpectedConditions.elementToBeClickable(
+                        By.id("country")));
+
+        country.click();
+
+        WebElement uk =
+                wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath("//*[text()='United Kingdom']")));
+
+        uk.click();
     }
 
     // Select Dates
